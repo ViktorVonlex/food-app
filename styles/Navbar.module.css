@@ -61,6 +61,7 @@
 .listItem {
     margin: 20px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .cart {
@@ -81,6 +82,10 @@
     justify-content: center;
     font-weight: bold;
     color: #d1411e;
+}
+
+.img {
+    cursor: pointer;
 }
 
 @media screen and (max-width:480px) {
