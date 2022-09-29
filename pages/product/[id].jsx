@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../redux/cartSlice';
 
-function Product({ pizza }) {
+function Product( {pizza} ) {
 
     const [size, setSize] = useState(0);
     const [price, setPrice] = useState(pizza.prices[0]);
