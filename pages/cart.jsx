@@ -25,10 +25,11 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("http://locahost:3000/api/orders", data)
-
-      res.status === 201 && router.push("/orders/" + (await res).data._id)
-      dispatch(reset())
+      const res = await axios.post("http://localhost:3000/api/orders", data);
+      if (res.status === 201) {
+        dispatch(reset());
+        router.push(`/orders/${res.data._id}`);
+      }
     } catch (error) {
       console.log(error)
     }
@@ -78,7 +79,7 @@ const Cart = () => {
           return actions.order.capture().then(function (details) {
             // Your code here after capture the order
             const shipping = details.purchase_units[0].shipping;
-            createOrder({ customer: shipping.name.full_name, address: shipping.address.address_line_1, cart: cart.total, method: 1 })
+            createOrder({ customer: shipping.name.full_name, address: shipping.address.address_line_1, total: cart.total, method: 1 })
           });
         }}
       />
@@ -150,7 +151,7 @@ const Cart = () => {
           </div>
           {open ? (
             <div className={styles.paymentMethods}>
-              <button className={styles.payButton} onClick={setCash(true)}>CASH ON DELIVERY</button>
+              <button className={styles.payButton} onClick={() => setCash(true)}>CASH ON DELIVERY</button>
               <PayPalScriptProvider
                 options={{
                   "client-id": "AWTgxoZ5cXVY_KQoZ-xwI6sptyVxclsrgy2rvqHiPMK_ZOBc_yfyH5LfWWLJcwCRh9pBIa8-FOgTm5R9",
