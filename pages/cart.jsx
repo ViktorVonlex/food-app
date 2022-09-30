@@ -165,22 +165,15 @@ const Cart = () => {
               </Modal>
 
               <Group position="center">
-                <Button fullWidth className={styles.payButton} onClick={() => { setCash(true); setOpened(true) }}>CASH ON DELIVERY</Button>
+                <Button styles={(theme) => ({
+                  root: {
+                    '&:hover': {
+                      backgroundColor: theme.fn.darken('#fafafa', 0.05),
+                    }
+                  }
+                })}
+                  fullWidth className={styles.payButton} onClick={() => { setCash(true); setOpened(true) }}>CASH ON DELIVERY</Button>
               </Group>
-
-              {/* <Popup trigger={<button className={styles.payButton} onClick={() => setCash(true)}>CASH ON DELIVERY</button>} modal>
-                {close => (
-                  <div className={styles.modal}>
-                    <button className={styles.close} onClick={close}>&times;</button>
-                    <div className={styles.header}> Modal Title </div>
-                    <div className={styles.content}>
-                      {cash && (
-                        <OrderDetail total={cart.total} createOrder={createOrder} />
-                      )}
-                    </div>
-                  </div>
-                )}
-              </Popup> */}
 
               <PayPalScriptProvider
                 options={{
