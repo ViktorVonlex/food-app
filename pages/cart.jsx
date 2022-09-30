@@ -11,6 +11,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
 import OrderDetail from "../components/OrderDetail";
+import Popup from 'reactjs-popup';
 
 const Cart = () => {
 
@@ -151,7 +152,20 @@ const Cart = () => {
           </div>
           {open ? (
             <div className={styles.paymentMethods}>
-              <button className={styles.payButton} onClick={() => setCash(true)}>CASH ON DELIVERY</button>
+              <Popup trigger={<button className={styles.payButton} onClick={() => setCash(true)}>CASH ON DELIVERY</button>} modal>
+                {close => (
+                  <div className={styles.modal}>
+                    <button className={styles.close} onClick={close}>&times;</button>
+                    <div className={styles.header}> Modal Title </div>
+                    <div className={styles.content}>
+                      {cash && (
+                        <OrderDetail total={cart.total} createOrder={createOrder} />
+                      )}
+                    </div>
+                  </div>
+                )}
+              </Popup>
+
               <PayPalScriptProvider
                 options={{
                   "client-id": "AWTgxoZ5cXVY_KQoZ-xwI6sptyVxclsrgy2rvqHiPMK_ZOBc_yfyH5LfWWLJcwCRh9pBIa8-FOgTm5R9",
@@ -171,9 +185,7 @@ const Cart = () => {
           )}
         </div>
       </div>
-      {cash && (
-        <OrderDetail total={cart.total} createOrder={createOrder} />
-      )}
+
     </div>
   );
 };
