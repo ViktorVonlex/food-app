@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
 import OrderDetail from "../components/OrderDetail";
 import Popup from 'reactjs-popup';
+import { Modal, Button, Group } from '@mantine/core';
 
 const Cart = () => {
 
@@ -19,6 +20,7 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
+  const [opened, setOpened] = useState(false);
   const router = useRouter();
   const amount = cart.total;
   const currency = "USD";
@@ -152,7 +154,21 @@ const Cart = () => {
           </div>
           {open ? (
             <div className={styles.paymentMethods}>
-              <Popup trigger={<button className={styles.payButton} onClick={() => setCash(true)}>CASH ON DELIVERY</button>} modal>
+              <Modal
+                opened={opened}
+                onClose={() => setOpened(false)}
+                title="Introduce yourself!"
+              >
+                {cash && (
+                  <OrderDetail total={cart.total} createOrder={createOrder} />
+                )}
+              </Modal>
+
+              <Group position="center">
+                <Button fullWidth className={styles.payButton} onClick={() => { setCash(true); setOpened(true) }}>CASH ON DELIVERY</Button>
+              </Group>
+
+              {/* <Popup trigger={<button className={styles.payButton} onClick={() => setCash(true)}>CASH ON DELIVERY</button>} modal>
                 {close => (
                   <div className={styles.modal}>
                     <button className={styles.close} onClick={close}>&times;</button>
@@ -164,7 +180,7 @@ const Cart = () => {
                     </div>
                   </div>
                 )}
-              </Popup>
+              </Popup> */}
 
               <PayPalScriptProvider
                 options={{
