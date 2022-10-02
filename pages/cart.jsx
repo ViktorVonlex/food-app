@@ -11,7 +11,6 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
 import OrderDetail from "../components/OrderDetail";
-import Popup from 'reactjs-popup';
 import { Modal, Button, Group } from '@mantine/core';
 
 const Cart = () => {
@@ -27,6 +26,7 @@ const Cart = () => {
   const style = { "layout": "vertical" };
 
   const createOrder = async (data) => {
+    console.log(data)
     try {
       const res = await axios.post("http://localhost:3000/api/orders", data);
       if (res.status === 201) {
@@ -157,7 +157,8 @@ const Cart = () => {
               <Modal
                 opened={opened}
                 onClose={() => setOpened(false)}
-                title="Introduce yourself!"
+                title={`You will pay $${cart.total} after delivery.`}
+                centered
               >
                 {cash && (
                   <OrderDetail total={cart.total} createOrder={createOrder} />

@@ -2,10 +2,20 @@ import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema(
     {
-        customer: {
+        firstName: {
             type: String,
             required: true,
-            maxlength: 60,
+            maxlength: 30,
+        },
+        surName: {
+            type: String,
+            required: true,
+            maxlength: 30,
+        },
+        email: {
+            type: String,
+            required: true,
+            maxlength: 30,
         },
         address: {
             type: String,
@@ -16,12 +26,17 @@ const OrderSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        phone: {
+            type: String,
+            required: true
+        },
         status: {
             type: Number,
             default: 0,
         },
         method: {
             type: Number,
+            default: 0,
             required: true
         },
     },
