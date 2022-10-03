@@ -13,7 +13,8 @@ function Featured() {
 
   return (
     <div className={styles.container}>
-        <Carousel slideSize="70%" height="100%" sx={{ flex: 1 }} slideGap="md" controlsOffset="md" controlSize={28} loop withIndicators>
+        <Carousel slideSize="70%" height="100%" sx={{ flex: 1 }}
+         slideGap="sx" controlsOffset="md" controlSize={28} loop withIndicators>
             {images.map((img, i) => (
                     <Carousel.Slide key={i}>
                         <Image src={img} alt="" layout='fill' objectFit='contain'/>
