@@ -233,14 +233,14 @@
 
 "@mantine/carousel@^5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/carousel/-/carousel-5.5.0.tgz#8a8a7214e5fe48ca7578ac127758e14d18f115cc"
+  resolved "https://registry.npmjs.org/@mantine/carousel/-/carousel-5.5.0.tgz"
   integrity sha512-xwl3y7UdyUFKXu15sGDD++zh4BmErxsSTxhbFeECRuQPcMMve0WYhLSTBUw1sS2oVw3KbrFZlVUP9ZsgHcQycg==
   dependencies:
     "@mantine/utils" "5.5.0"
 
 "@mantine/core@^5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/core/-/core-5.5.0.tgz#c28f220d209adcab8954e82b4e103a0249e39c11"
+  resolved "https://registry.npmjs.org/@mantine/core/-/core-5.5.0.tgz"
   integrity sha512-bMYG3za1UOEUaM01MCRWY0/nFdSj7DTE9+WV95v+wejHVOIvzX1/P3ukzbDKbtVsfWbguFRR4E4ajc2RENcg8g==
   dependencies:
     "@floating-ui/react-dom-interactions" "^0.10.1"
@@ -259,43 +259,35 @@
 
 "@mantine/hooks@^5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-5.5.0.tgz#2007960b0f915d3db3b49b3bb63c8caee38ca614"
+  resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-5.5.0.tgz"
   integrity sha512-Z7He/2beF+SWp4a78oDLJrZFN+hVDLtxeCxRoKQAhpABOXA0Mm9Km4CZKf5Ekh4/RpS0BfRkNmQimckTN2GcJw==
 
-"@mantine/next@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/@mantine/next/-/next-5.4.2.tgz"
-  integrity sha512-RbgVF5s9D4DKLIEd1M4zetkDtqWbUGzZU+I93pixLJN8tywNiPwXa/fqg//qrEBVqSHLKnv1j60Tm1z2LtEMbQ==
+"@mantine/next@^5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/next/-/next-5.5.0.tgz#0dcffc411b766b685a4d993e1cd7ef861ffb99f4"
+  integrity sha512-Av69n27Drnra/C/4aJACb6xTAQT3ZbJ2rlWNo5NTpaRHlykSmV09n8Aimu3vJKZrhA5zmgN7tWYP45htZWookA==
   dependencies:
-    "@mantine/ssr" "5.4.2"
-    "@mantine/styles" "5.4.2"
+    "@mantine/ssr" "5.5.0"
+    "@mantine/styles" "5.5.0"
 
 "@mantine/nprogress@^5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/nprogress/-/nprogress-5.5.0.tgz#e1781416d9526f0f3964498395da4cb2d0ac78de"
+  resolved "https://registry.npmjs.org/@mantine/nprogress/-/nprogress-5.5.0.tgz"
   integrity sha512-NenmMAFuOfykubLZX7P1PwpHgne+OT2fmPg8OxplonDa3BZLriXV4SvZJuqFN1ZlV9WM1VKRKBlcWnCMQdvHog==
   dependencies:
     "@mantine/utils" "5.5.0"
 
-"@mantine/ssr@5.4.2":
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/@mantine/ssr/-/ssr-5.4.2.tgz"
-  integrity sha512-RhPmFYQOLJkkHvKZV+J5LKxaYDICfmcE3e0ENIAdGTr5x00jDKCpqxZXMRPYJjYcrd0Yzq89eIgTrjvtJw8JNg==
+"@mantine/ssr@5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/ssr/-/ssr-5.5.0.tgz#906f61654257e35e5a05663e3df36153de8b4328"
+  integrity sha512-bK2LvMbute17fS9seMB0Dio9EXRcCZCXq5DYo1+pL7bXqaUljGSThm22UOmnk8hlJB80W+IaUBXBcCSDTFj3RA==
   dependencies:
-    "@mantine/styles" "5.4.2"
+    "@mantine/styles" "5.5.0"
     html-react-parser "1.4.12"
-
-"@mantine/styles@5.4.2":
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/@mantine/styles/-/styles-5.4.2.tgz"
-  integrity sha512-+JxUlkvfj3hoxaVFLJx/p8SZ6OR/AW2fiMyn0PuLB/U50k6xr2YaR1G5KB0WqmpcKMFkom3jR/LsWTaVoy8+0g==
-  dependencies:
-    clsx "1.1.1"
-    csstype "3.0.9"
 
 "@mantine/styles@5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/styles/-/styles-5.5.0.tgz#fe931d0a7464bebbf17f6d2e46df885214f8751b"
+  resolved "https://registry.npmjs.org/@mantine/styles/-/styles-5.5.0.tgz"
   integrity sha512-0B6TeC0gRtergMD5X+9YizjOllv3kKRU6zxyvsp5dYIw339WH4+G89Qaz1Y6HQEzj85Gw3OoUx87czNLzM+L+w==
   dependencies:
     clsx "1.1.1"
@@ -303,7 +295,7 @@
 
 "@mantine/utils@5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.5.0.tgz#bceb8a0da64a4ace5ff56b2aa169c1c5f532bfe8"
+  resolved "https://registry.npmjs.org/@mantine/utils/-/utils-5.5.0.tgz"
   integrity sha512-Ej+hYfu49faFV6velJlFWLb/ErrcM3dzgYhzRPFcMpx+HZHUheTUtthFOicieGbHBd1lPXprSkMHd3UaddfY/w==
 
 "@next/env@12.2.3":
@@ -1098,14 +1090,14 @@ duplexer2@^0.1.2:
 
 embla-carousel-react@^7.0.3:
   version "7.0.3"
-  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-7.0.3.tgz#343c972a1ac5869acba3d6e9c7eeb3bd27f7e335"
+  resolved "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-7.0.3.tgz"
   integrity sha512-nvgAAmoFuXyCPuH2rSTnSdaTSMwFX/ilXDlfMCCDfdaj4X3u25+x8lMC1bINuk+4G2Hm6SOlrZ1eGkYdBg5HAg==
   dependencies:
     embla-carousel "7.0.3"
 
 embla-carousel@7.0.3:
   version "7.0.3"
-  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-7.0.3.tgz#7173a0f27b697a42266d34764c657eeba85bd7b5"
+  resolved "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.3.tgz"
   integrity sha512-Zo8E/qNb8J7n/jcfQxPrfdARlTgsMvmcXshn3J/2oxWVLwL/3N4cAhuqLQiud/oCjZzl+A8maCJDe2PDVlc/cA==
 
 emoji-regex@^9.2.2:
