@@ -6,6 +6,7 @@ import '../styles/globals.css'
 import store from "../redux/store"
 import { Provider } from 'react-redux'
 import React from 'react';
+import { RouterTransition } from '../components/RouterTransition';
 
 export default function MyApp(props: AppProps) {
     const { Component, pageProps } = props;
@@ -26,6 +27,7 @@ export default function MyApp(props: AppProps) {
                 }}
             >
                 <Provider store={store}>
+                    <RouterTransition />
                     <Layout>
                         <Component {...pageProps} />
                     </Layout>

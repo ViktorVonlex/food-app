@@ -1,6 +1,5 @@
 import { TextInput, Checkbox, Button, Group, Box } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import styles from '../styles/OrderDetail2.module.css'
 
 function OrderDetail({ total, createOrder }) {
 
@@ -26,7 +25,7 @@ function OrderDetail({ total, createOrder }) {
   });
 
   return (
-    <Box className={styles.container} sx={{ maxWidth: 300 }} mx="auto">
+    <Box sx={{ maxWidth: 300 }} mx="auto">
       <form onSubmit={form.onSubmit((values) => submitClick(values))}>
         <TextInput
           withAsterisk

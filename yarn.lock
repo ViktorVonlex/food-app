@@ -270,6 +270,13 @@
     "@mantine/ssr" "5.4.2"
     "@mantine/styles" "5.4.2"
 
+"@mantine/nprogress@^5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/nprogress/-/nprogress-5.5.0.tgz#e1781416d9526f0f3964498395da4cb2d0ac78de"
+  integrity sha512-NenmMAFuOfykubLZX7P1PwpHgne+OT2fmPg8OxplonDa3BZLriXV4SvZJuqFN1ZlV9WM1VKRKBlcWnCMQdvHog==
+  dependencies:
+    "@mantine/utils" "5.5.0"
+
 "@mantine/ssr@5.4.2":
   version "5.4.2"
   resolved "https://registry.npmjs.org/@mantine/ssr/-/ssr-5.4.2.tgz"
