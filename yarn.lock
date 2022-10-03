@@ -231,29 +231,36 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@mantine/core@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/@mantine/core/-/core-5.4.2.tgz"
-  integrity sha512-4u9351HKXIJKMNyILoxeYQO+HkyM5lVD5qFueswraradtU5dcYYJ8Tv0Ge5EiVdVGE4oKHKg+fdfIIcdPlI9qQ==
+"@mantine/carousel@^5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/carousel/-/carousel-5.5.0.tgz#8a8a7214e5fe48ca7578ac127758e14d18f115cc"
+  integrity sha512-xwl3y7UdyUFKXu15sGDD++zh4BmErxsSTxhbFeECRuQPcMMve0WYhLSTBUw1sS2oVw3KbrFZlVUP9ZsgHcQycg==
+  dependencies:
+    "@mantine/utils" "5.5.0"
+
+"@mantine/core@^5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/core/-/core-5.5.0.tgz#c28f220d209adcab8954e82b4e103a0249e39c11"
+  integrity sha512-bMYG3za1UOEUaM01MCRWY0/nFdSj7DTE9+WV95v+wejHVOIvzX1/P3ukzbDKbtVsfWbguFRR4E4ajc2RENcg8g==
   dependencies:
     "@floating-ui/react-dom-interactions" "^0.10.1"
-    "@mantine/styles" "5.4.2"
-    "@mantine/utils" "5.4.2"
+    "@mantine/styles" "5.5.0"
+    "@mantine/utils" "5.5.0"
     "@radix-ui/react-scroll-area" "1.0.0"
     react-textarea-autosize "8.3.4"
 
 "@mantine/form@^5.5.0":
   version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@mantine/form/-/form-5.5.0.tgz#09f6982e8617872c0623f8101e72e1b41508cf62"
+  resolved "https://registry.npmjs.org/@mantine/form/-/form-5.5.0.tgz"
   integrity sha512-rLd5b92wyh0e2Pq1RIxvUwJZVxqCzBgSl2UBgPRilCuDMk3dU1rC8wJR2MCxcfsFGoXWG5LEGajm8NthtU1mtQ==
   dependencies:
     fast-deep-equal "^3.1.3"
     klona "^2.0.5"
 
-"@mantine/hooks@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-5.4.2.tgz"
-  integrity sha512-JnRsWYV0AWPd249qtkmTWDAbxsBf7vxf8jGUVYHCI7Wz6Ukw0PnnzjEkPCdfwuiuiVk1+wnQ/qVIKqHzu2kdVQ==
+"@mantine/hooks@^5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-5.5.0.tgz#2007960b0f915d3db3b49b3bb63c8caee38ca614"
+  integrity sha512-Z7He/2beF+SWp4a78oDLJrZFN+hVDLtxeCxRoKQAhpABOXA0Mm9Km4CZKf5Ekh4/RpS0BfRkNmQimckTN2GcJw==
 
 "@mantine/next@^5.4.2":
   version "5.4.2"
@@ -279,10 +286,18 @@
     clsx "1.1.1"
     csstype "3.0.9"
 
-"@mantine/utils@5.4.2":
-  version "5.4.2"
-  resolved "https://registry.npmjs.org/@mantine/utils/-/utils-5.4.2.tgz"
-  integrity sha512-faKJd2VEsq9hw9jR7dYBlgS8gtwWtqYtgzAJ96V5tz+gjuoDkE7St+CbP+PoPGqOWTDE0T5faRiCHbnvaYAC/A==
+"@mantine/styles@5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/styles/-/styles-5.5.0.tgz#fe931d0a7464bebbf17f6d2e46df885214f8751b"
+  integrity sha512-0B6TeC0gRtergMD5X+9YizjOllv3kKRU6zxyvsp5dYIw339WH4+G89Qaz1Y6HQEzj85Gw3OoUx87czNLzM+L+w==
+  dependencies:
+    clsx "1.1.1"
+    csstype "3.0.9"
+
+"@mantine/utils@5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.5.0.tgz#bceb8a0da64a4ace5ff56b2aa169c1c5f532bfe8"
+  integrity sha512-Ej+hYfu49faFV6velJlFWLb/ErrcM3dzgYhzRPFcMpx+HZHUheTUtthFOicieGbHBd1lPXprSkMHd3UaddfY/w==
 
 "@next/env@12.2.3":
   version "12.2.3"
@@ -1073,6 +1088,18 @@ duplexer2@^0.1.2:
   integrity sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA==
   dependencies:
     readable-stream "^2.0.2"
+
+embla-carousel-react@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-7.0.3.tgz#343c972a1ac5869acba3d6e9c7eeb3bd27f7e335"
+  integrity sha512-nvgAAmoFuXyCPuH2rSTnSdaTSMwFX/ilXDlfMCCDfdaj4X3u25+x8lMC1bINuk+4G2Hm6SOlrZ1eGkYdBg5HAg==
+  dependencies:
+    embla-carousel "7.0.3"
+
+embla-carousel@7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-7.0.3.tgz#7173a0f27b697a42266d34764c657eeba85bd7b5"
+  integrity sha512-Zo8E/qNb8J7n/jcfQxPrfdARlTgsMvmcXshn3J/2oxWVLwL/3N4cAhuqLQiud/oCjZzl+A8maCJDe2PDVlc/cA==
 
 emoji-regex@^9.2.2:
   version "9.2.2"
@@ -1914,7 +1941,7 @@ kareem@2.4.1:
 
 klona@^2.0.5:
   version "2.0.5"
-  resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.5.tgz#d166574d90076395d9963aa7a928fabb8d76afbc"
+  resolved "https://registry.npmjs.org/klona/-/klona-2.0.5.tgz"
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
 
 language-subtag-registry@~0.3.2:
