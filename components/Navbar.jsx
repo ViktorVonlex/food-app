@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <div className={styles.container}>
             <Grid justify="space-around" align="center">
-            <Grid.Col span="auto">
+            <Grid.Col span="content">
                 <div className={styles.item}>
                     <div className={styles.callButton}>
                         <Image src="/img/telephone.png" layout="responsive" alt="" width="32" height="32" />
@@ -41,7 +41,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </Grid.Col>
-            <Grid.Col span="auto">
+            <Grid.Col span={2}>
                 <Link href="/cart" passHref>
                     <div className={styles.divCart}>
                         <div className={styles.cart}>
