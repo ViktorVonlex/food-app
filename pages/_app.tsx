@@ -7,6 +7,7 @@ import store from "../redux/store"
 import { Provider } from 'react-redux'
 import React from 'react';
 import { RouterTransition } from '../components/RouterTransition';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 export default function MyApp(props: AppProps) {
     const { Component, pageProps } = props;
@@ -26,12 +27,21 @@ export default function MyApp(props: AppProps) {
                     colorScheme: 'light',
                 }}
             >
+                <PayPalScriptProvider
+                options={{
+                  "client-id": "AWTgxoZ5cXVY_KQoZ-xwI6sptyVxclsrgy2rvqHiPMK_ZOBc_yfyH5LfWWLJcwCRh9pBIa8-FOgTm5R9",
+                  components: "buttons",
+                  currency: "USD",
+                  "disable-funding": "credit,card"
+                }}
+              >
                 <Provider store={store}>
                     <RouterTransition />
                     <Layout>
                         <Component {...pageProps} />
                     </Layout>
                 </Provider>
+              </PayPalScriptProvider>  
             </MantineProvider>
         </>
     );
