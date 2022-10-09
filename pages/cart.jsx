@@ -2,7 +2,6 @@ import styles from "../styles/Cart.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  PayPalScriptProvider,
   PayPalButtons,
   usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
@@ -17,8 +16,6 @@ const Cart = () => {
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const [open, setOpen] = useState(false);
-  const [cash, setCash] = useState(false);
   const [opened, setOpened] = useState(false);
   const router = useRouter();
   const amount = cart.total;
@@ -30,8 +27,8 @@ const Cart = () => {
     try {
       const res = await axios.post(`${process.env.HOST}/api/orders`, data);
       if (res.status === 201) {
-        dispatch(reset());
         router.push(`/orders/${res.data._id}`);
+        dispatch(reset());
       }
     } catch (error) {
       console.log(error)
@@ -55,11 +52,10 @@ const Cart = () => {
 
 
     return (<>
-      {(showSpinner && isPending) && <div className="spinner" />}
+
       <PayPalButtons
         style={style}
         disabled={false}
-        forceReRender={[amount, currency, style]}
         fundingSource={undefined}
         createOrder={(data, actions) => {
           return actions.order
@@ -152,7 +148,6 @@ const Cart = () => {
           <div className={styles.totalText}>
             <b className={styles.totalTextTitle}>Total:</b>${cart.total}
           </div>
-          {open ? (
             <div className={styles.paymentMethods}>
               <Modal
                 opened={opened}
@@ -160,9 +155,9 @@ const Cart = () => {
                 title={`You will pay $${cart.total} after delivery.`}
                 centered
               >
-                {cash && (
-                  <OrderDetail total={cart.total} createOrder={createOrder} />
-                )}
+                
+                <OrderDetail total={cart.total} createOrder={createOrder} />
+                
               </Modal>
 
               <Group position="center">
@@ -173,26 +168,13 @@ const Cart = () => {
                     }
                   }
                 })}
-                  fullWidth className={styles.payButton} onClick={() => { setCash(true); setOpened(true) }}>CASH ON DELIVERY</Button>
-              </Group>
-
-              <PayPalScriptProvider
-                options={{
-                  "client-id": "AWTgxoZ5cXVY_KQoZ-xwI6sptyVxclsrgy2rvqHiPMK_ZOBc_yfyH5LfWWLJcwCRh9pBIa8-FOgTm5R9",
-                  components: "buttons",
-                  currency: "USD",
-                  "disable-funding": "credit,card"
-                }}
-              >
+                  fullWidth className={styles.payButton} onClick={() => { setOpened(true) }}>CASH ON DELIVERY</Button>
+              </Group>  
                 <ButtonWrapper
                   currency={currency}
                   showSpinner={false}
                 />
-              </PayPalScriptProvider>
             </div>
-          ) : (
-            <button className={styles.button} onClick={() => setOpen(true)}>CHECKOUT NOW!</button>
-          )}
         </div>
       </div>
 
