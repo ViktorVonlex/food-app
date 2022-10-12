@@ -1,7 +1,7 @@
 import React from "react";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
-import PaypalButton from "./PaypalButton";
+import PaypalButton from "./PayPalButton";
 
 
 const PaypalOrder = ({amount, onApproveHandler}) => {
