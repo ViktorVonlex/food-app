@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 
-import Loader from "./Loader";
+import Loader from "./loader";
 
 const PaypalButton = ({ createOrder, createSubscription, onApprove }) => {
   const [{ options, isResolved }] = usePayPalScriptReducer();
