@@ -1,18 +1,13 @@
 import styles from "../styles/Cart.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  PayPalButtons,
-  usePayPalScriptReducer
-} from "@paypal/react-paypal-js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
 import OrderDetail from "../components/OrderDetail";
 import { Modal, Button, Group } from '@mantine/core';
-import React from "react";
-import { ReactDOM } from "react";
+import PaypalOrder from "../util/paypal/PayPalOrder";
 
 const Cart = () => {
 
@@ -24,12 +19,11 @@ const Cart = () => {
   const currency = "USD";
   const style = { "layout": "vertical" };
 
-  const PayPalButton = paypal.Buttons.driver("react", { React, ReactDOM });
-
   const createOrder = async (data) => {
     console.log(data)
+    
     try {
-      const res = await axios.post(`${process.env.HOST}/api/orders`, data);
+      const res = await axios.post("http://localhost:3000/api/orders", data);
       if (res.status === 201) {
         router.push(`/orders/${res.data._id}`);
         dispatch(reset());
@@ -38,73 +32,7 @@ const Cart = () => {
       console.log(error)
     }
   }
-
-  const ButtonWrapper = ({ currency, showSpinner }) => {
-    // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
-    // This is the main reason to wrap the PayPalButtons in a new component
-
-    const createOrder = (data, actions) => {
-      return actions.order.create({
-        purchase_units: [
-          {
-            amount: {
-              currency_code: currency,
-              value: amount,
-            },
-          },
-        ],
-      });
-    };
-    const onApprove = (data, actions) => {
-      return actions.order.capture().then(function (details) {
-        // Your code here after capture the order
-        const shipping = details.purchase_units[0].shipping;
-        createOrder({ customer: shipping.name.full_name, address: shipping.address.address_line_1, total: cart.total, method: 1 })
-      });
-    };
-    return (
-      <>
-      <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
-      <PayPalButton
-        //createOrder={(data, actions) => createOrder(data, actions)}
-        onApprove={(data, actions) => onApprove(data, actions)}
-      />
-      </>
-    );
-      /*
-    return (<>
-      <PayPalButtons
-        style={style}
-        disabled={false}
-        fundingSource={undefined}
-        createOrder={(data, actions) => {
-          return actions.order
-            .create({
-              purchase_units: [
-                {
-                  amount: {
-                    currency_code: currency,
-                    value: amount,
-                  },
-                },
-              ],
-            })
-            .then((orderId) => {
-              // Your code here after create the order
-              return orderId;
-            });
-        }}
-        onApprove={function (data, actions) {
-          return actions.order.capture().then(function (details) {
-            // Your code here after capture the order
-            const shipping = details.purchase_units[0].shipping;
-            createOrder({ customer: shipping.name.full_name, address: shipping.address.address_line_1, total: cart.total, method: 1 })
-          });
-        }}
-      />
-    </>
-    );*/
-  }
+    
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -190,10 +118,15 @@ const Cart = () => {
                 })}
                   fullWidth className={styles.payButton} onClick={() => { setOpened(true) }}>CASH ON DELIVERY</Button>
               </Group>  
-                <ButtonWrapper
-                  currency={currency}
-                  showSpinner={false}
-                />
+              <PaypalOrder amount={amount} onApproveHandler={(data, actions) => {
+                // This function captures the funds from the transaction.
+                return actions.order.capture().then(function (details) {
+                  // This function shows a transaction success message to your buyer.
+                  const shipping = details.purchase_units[0].shipping;
+                  createOrder({ customer: shipping.name.full_name, address: shipping.address.address_line_1, total: cart.total, method: 1 })
+                  alert("Transaction completed by " + details.payer.name.given_name);
+                });
+              }}/>
             </div>
         </div>
       </div>
