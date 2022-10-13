@@ -5,6 +5,7 @@ const handler = async (req, res) => {
     const {method} =  req;
 
     await dbConnect();
+    res.setHeader('Access-Control-Allow-Origin', '*')
 
     if (method === "GET"){
         try {

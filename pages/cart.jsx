@@ -19,6 +19,8 @@ const Cart = ({host}) => {
   const currency = "USD";
   const style = { "layout": "vertical" };
 
+  console.log(host)
+
   const createOrder = async (data) => {
     console.log(data)
     

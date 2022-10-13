@@ -4,18 +4,4 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/api/orders',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-        ],
-      },
-    ]
-  },
-},nextConfig
+module.exports = nextConfig
