@@ -9,7 +9,7 @@ import OrderDetail from "../components/OrderDetail";
 import { Modal, Button, Group } from '@mantine/core';
 import PaypalOrder from "../util/paypal/PayPalOrder";
 
-const Cart = (props) => {
+const Cart = ({host}) => {
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -18,8 +18,6 @@ const Cart = (props) => {
   const amount = cart.total;
   const currency = "USD";
   const style = { "layout": "vertical" };
-
-  const host = props.host
 
   const createOrder = async (data) => {
     console.log(data)
@@ -137,12 +135,13 @@ const Cart = (props) => {
   );
 };
 
-
+export const getServerSideProps = async () => {
+  const host = process.env.HOST
+  return {
+    props: {
+        host: host
+    }
+}
+}
 
 export default Cart;
-
-export async function getStaticProps() {
-  const host = process.env.HOST
-
-  return { props: { host } }
-}
