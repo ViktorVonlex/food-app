@@ -9,7 +9,7 @@ import OrderDetail from "../components/OrderDetail";
 import { Modal, Button, Group } from '@mantine/core';
 import PaypalOrder from "../util/paypal/PayPalOrder";
 
-const Cart = () => {
+const Cart = (props) => {
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -19,11 +19,13 @@ const Cart = () => {
   const currency = "USD";
   const style = { "layout": "vertical" };
 
+  const host = props.host
+
   const createOrder = async (data) => {
     console.log(data)
     
     try {
-      const res = await axios.post("http://localhost:3000/api/orders", data);
+      const res = await axios.post(`${host}/api/orders`, data);
       if (res.status === 201) {
         router.push(`/orders/${res.data._id}`);
         dispatch(reset());
@@ -138,3 +140,9 @@ const Cart = () => {
 
 
 export default Cart;
+
+export async function getStaticProps() {
+  const host = process.env.HOST
+
+  return { props: { host } }
+}

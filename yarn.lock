@@ -427,7 +427,6 @@
   "integrity" "sha512-bMYG3za1UOEUaM01MCRWY0/nFdSj7DTE9+WV95v+wejHVOIvzX1/P3ukzbDKbtVsfWbguFRR4E4ajc2RENcg8g=="
   "resolved" "https://registry.npmjs.org/@mantine/core/-/core-5.5.0.tgz"
   "version" "5.5.0"
-
   dependencies:
     "@floating-ui/react-dom-interactions" "^0.10.1"
     "@mantine/styles" "5.5.0"
@@ -452,7 +451,6 @@
   "integrity" "sha512-7vVZEyW4rN7O1ytVT0mW7jnsd7GkcFwphdvXJq6sa8pzWvOUpIo5uG2zsIzoxxv27mjhfF1bxIolL0vAdwgfwA=="
   "resolved" "https://registry.npmjs.org/@mantine/next/-/next-5.5.4.tgz"
   "version" "5.5.4"
-
   dependencies:
     "@mantine/ssr" "5.5.4"
     "@mantine/styles" "5.5.4"
@@ -497,7 +495,6 @@
   "integrity" "sha512-9P9THmRFVKGKt9DYqeC2aKIxm8rlvkK38V1P1sRE7qyoPBIs8l9oo79QoSdPtOWfzkbDAVUqvbQGgTMsb8BtJg=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.3.1.tgz"
   "version" "12.3.1"
-
 
 "@next/eslint-plugin-next@12.2.3":
   "integrity" "sha512-B2e8Yg1MpuLsGxhCx4rU8/Tcnr5wFmCx1O2eyLXBPnaCcsFXfGCo067ujagtDLtWASL3GNgzg78U1SB0dbc38A=="
@@ -2338,7 +2335,6 @@
     "@next/swc-win32-arm64-msvc" "12.3.1"
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
-
 
 "node-abi@^3.3.0":
   "integrity" "sha512-YPG3Co0luSu6GwOBsmIdGW6Wx0NyNDLg/hriIyDllVsNwnI6UeqaWShxC3lbH4LtEQUgoLP3XR1ndXiDAWvmRw=="
