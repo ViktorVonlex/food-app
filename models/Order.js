@@ -2,19 +2,24 @@ import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema(
     {
+        customer: {
+            type: String,
+            required: false,
+            maxlength: 50,
+        },
         firstName: {
             type: String,
-            required: true,
+            required: false,
             maxlength: 30,
         },
         surName: {
             type: String,
-            required: true,
+            required: false,
             maxlength: 30,
         },
         email: {
             type: String,
-            required: true,
+            required: false,
             maxlength: 30,
         },
         address: {
@@ -28,7 +33,7 @@ const OrderSchema = new mongoose.Schema(
         },
         phone: {
             type: String,
-            required: true
+            required: false,
         },
         status: {
             type: Number,
@@ -37,7 +42,7 @@ const OrderSchema = new mongoose.Schema(
         method: {
             type: Number,
             default: 0,
-            required: true
+            required: true,
         },
     },
     { timestamps: true }

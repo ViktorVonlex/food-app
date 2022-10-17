@@ -19,7 +19,6 @@ const Cart = ({host}) => {
   const currency = "USD";
   const style = { "layout": "vertical" };
 
-  console.log(host)
 
   const createOrder = async (data) => {
     console.log(data)
@@ -125,7 +124,8 @@ const Cart = ({host}) => {
                 return actions.order.capture().then(function (details) {
                   // This function shows a transaction success message to your buyer.
                   const shipping = details.purchase_units[0].shipping;
-                  createOrder({ customer: shipping.name.full_name, address: shipping.address.address_line_1, total: cart.total, method: 1 })
+                  const order = { customer: shipping.name.full_name, address: shipping.address.address_line_1, total: cart.total, method: 1 }
+                  createOrder(order)
                   alert("Transaction completed by " + details.payer.name.given_name);
                 });
               }}/>
