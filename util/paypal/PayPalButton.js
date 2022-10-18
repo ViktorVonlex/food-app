@@ -25,7 +25,7 @@ const PaypalButton = ({ createOrder, createSubscription, onApprove }) => {
 
   return (
     <PayPalButtons
-      style={{ layout: "horizontal" }}
+      style={{ layout: "vertical", height: 36 }}
       {...buttonOptions}
       onApprove={onApprove}
     />
